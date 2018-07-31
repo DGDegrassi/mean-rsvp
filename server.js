@@ -43,7 +43,7 @@ if (process.env.NODE_ENV !== 'dev') {
 
 // Routes
 
-require('./server/api');
+require('./server/api')(app, config);
 
 // Pass routing to angular app
 // Don't run in dev
@@ -54,4 +54,4 @@ if (process.env.NODE_ENV !== 'dev') {
 }
 
 //  Server
-app.listen(port, () => console.log('Server running on localhost:${port}'));
+app.listen(port, () => console.log(`Server running on localhost:${port}`));
